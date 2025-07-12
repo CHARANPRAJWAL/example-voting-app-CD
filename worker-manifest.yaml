@@ -15,5 +15,5 @@ spec:
         app: worker
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_worker
+      - image: ghcr.io/charanprajwal/example-voting-app-ci/worker@ghcr.io/charanprajwal/example-voting-app-ci/worker@sha256:7e499ff46c2cd58a04aef36c37d4a06ee1fca5f714d5f572b55cf8d348896d5a
         name: worker 
