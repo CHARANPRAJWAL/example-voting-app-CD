@@ -15,5 +15,5 @@ spec:
         app: worker
     spec:
       containers:
-      - image: ghcr.io/charanprajwal/example-voting-app-ci/worker@ghcr.io/charanprajwal/example-voting-app-ci/worker@sha256:fc2c0f1cd1f1aee5e6a0d40344ae4ceab13c87cf40df1ab7f97082d285cca6db
+      - image: ghcr.io/charanprajwal/example-voting-app-ci/worker@ghcr.io/charanprajwal/example-voting-app-ci/worker@sha256:50392aaffd12b380dedbfccbbe17f642ecdc5062bac60892e68f0d418a1014af
         name: worker 
