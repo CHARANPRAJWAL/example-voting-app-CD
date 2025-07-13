@@ -15,7 +15,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: ghcr.io/charanprajwal/example-voting-app-ci/vote@ghcr.io/charanprajwal/example-voting-app-ci/vote@sha256:e62082381cd3c108bef36622a59a90cdb2feddc84bd3392c10f435b427f87ffe
+      - image: ghcr.io/charanprajwal/example-voting-app-ci/vote@ghcr.io/charanprajwal/example-voting-app-ci/vote@sha256:823139aebf415c8d9606371d7c3609fb3cea2da66bc6a3323872de0685a8daf2
         name: vote
         ports:
         - containerPort: 80
