@@ -1,11 +1,12 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: worker
   labels:
     app: worker
-  name: worker
 spec:
-  replicas: 1
+  replicas: {{ .Values.worker.replicaCount }}
   selector:
     matchLabels:
       app: worker
@@ -15,5 +16,5 @@ spec:
         app: worker
     spec:
       containers:
-      - image: ghcr.io/charanprajwal/example-voting-app-ci/worker@sha256:78851b21463d03034895dbc320861adf2dadea544e99ead9b4cd683a808fed03
-        name: worker 
+        - name: worker
+          image: {{ .Values.worker.image }} 
