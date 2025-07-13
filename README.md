@@ -1,4 +1,4 @@
-# Voting App Helm Chart
+# Voting App Helm Chart.
 
 This Helm chart deploys the Example Voting App microservices (PostgreSQL, Redis, Vote, Result, Worker) on Kubernetes.
 
