@@ -15,7 +15,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: ghcr.io/charanprajwal/example-voting-app-ci/result@
+      - image: ghcr.io/charanprajwal/example-voting-app-ci/result@sha256:595bc33df00c18e1fdcf63ac348ec2d08239305915331f0650236136d1216306
         name: result
         ports:
         - containerPort: 80
