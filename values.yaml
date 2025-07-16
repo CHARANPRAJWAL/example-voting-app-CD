@@ -27,7 +27,7 @@ redis:
 
 # Vote App
 vote:
-  image: dockersamples/examplevotingapp_vote
+  image: ghcr.io/charanprajwal/example-voting-app-ci/vote@sha256:c34d230771b6a352ab21f22c8de9bcc04d320add0c78cbf688b2ebd82f3b1bef
   replicaCount: 1
   service:
     type: NodePort
@@ -37,7 +37,7 @@ vote:
 
 # Result App
 result:
-  image: dockersamples/examplevotingapp_result
+  image: ghcr.io/charanprajwal/example-voting-app-ci/result@sha256:595bc33df00c18e1fdcf63ac348ec2d08239305915331f0650236136d1216306
   replicaCount: 1
   service:
     type: NodePort
@@ -47,5 +47,5 @@ result:
 
 # Worker
 worker:
-  image: dockersamples/examplevotingapp_worker
+  image: ghcr.io/charanprajwal/example-voting-app-ci/worker@sha256:78851b21463d03034895dbc320861adf2dadea544e99ead9b4cd683a808fed03
   replicaCount: 1
