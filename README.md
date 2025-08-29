@@ -1,3 +1,5 @@
+
+
 ```markdown
 # example-voting-app-CD
 
@@ -6,16 +8,12 @@ Track this repo with Argo CD or Flux, or apply the manifests directly with `kube
 
 ## What’s inside
 
-```
+├── db-manifest.yaml # Postgres database (Deployment/StatefulSet + Service + PVC)
+├── redis-manifest.yaml # Redis queue (Deployment + Service)
+├── vote-manifest.yaml # Vote web app (Python/Flask) – Service (ClusterIP/LoadBalancer)
+├── result-manifest.yaml # Result web app (Node.js) – Service (ClusterIP/LoadBalancer)
+└── worker-manifest.yaml # Background worker (DotNet) – Deployment
 
-.
-├── db-manifest.yaml        # Postgres database (Deployment/StatefulSet + Service + PVC)
-├── redis-manifest.yaml     # Redis queue (Deployment + Service)
-├── vote-manifest.yaml      # Vote web app (Python/Flask) – Service (ClusterIP/LoadBalancer)
-├── result-manifest.yaml    # Result web app (Node.js) – Service (ClusterIP/LoadBalancer)
-└── worker-manifest.yaml    # Background worker (DotNet) – Deployment
-
-```
 
 > Images are pinned by tag or digest for repeatable, audit-friendly CD.  
 > Update images by changing the tag/digest in the manifest and pushing to `main`—your GitOps controller will reconcile.
@@ -27,10 +25,7 @@ Track this repo with Argo CD or Flux, or apply the manifests directly with `kube
 - **result** → reads tallies from Postgres and renders UI
 
 ```
-
-\[ vote ] --(enqueue)--> \[ redis ] --(worker)--> \[ postgres ] <--(read)-- \[ result ]
-
-````
+[ vote ] --(enqueue)--> [ redis ] --(worker)--> [ postgres ] <--(read)-- [ result ]
 
 ## Prerequisites
 
@@ -70,7 +65,7 @@ kubectl port-forward -n voting-app svc/result 8081:80
 * Vote UI: [http://localhost:8080](http://localhost:8080)
 * Result UI: [http://localhost:8081](http://localhost:8081)
 
-> If Services are `LoadBalancer`, use `kubectl get svc -n voting-app` and open the external IPs.
+> If Services are `LoadBalancer`, run `kubectl get svc -n voting-app` and use the external IPs.
 
 ## GitOps with Argo CD (recommended)
 
@@ -152,7 +147,7 @@ kubectl delete namespace voting-app
 
 ### License
 
-This repo only contains Kubernetes manifests. The underlying application is from the Docker Samples Voting App (MIT-licensed).
+This repo only contains Kubernetes manifests.
+The underlying application is from the Docker Samples Voting App (MIT-licensed).
 
 ```
-
